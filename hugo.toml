@@ -13,3 +13,5 @@ defaultContentLanguage = 'en'
     title = 'Centro de Recuperación de Inundaciones'
     weight = 2
     contentDir = 'content/es'
+
+theme = "ananke"
