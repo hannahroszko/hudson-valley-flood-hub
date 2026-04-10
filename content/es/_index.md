@@ -1,12 +1,12 @@
-\---
+{
 
-title: "Centro de Recuperación de Inundaciones"
+"title": "Centro de Recuperación de Inundaciones",
 
-date: 2026-04-10
+"date": "2026-04-10",
 
-draft: false
+"draft": false
 
-\---
+}
 
 
 
@@ -16,31 +16,31 @@ Este centro ayuda a los residentes del Hudson Valley a navegar la recuperación 
 
 
 
-\[View this page in English (Versión en Inglés)](/)
+\[View English Version](/)
 
 
 
 \## Inicie su Cuestionario
 
-\*\*¿Cómo describiría su situación de vivienda?\*\*
+¿Cómo describiría su situación de vivienda?
 
 
 
 \[Soy propietario de mi casa](/es/propietario/)
 
-\[Soy inquilino (rento)](/es/inquilino/)
+\[Soy inquilino](/es/inquilino/)
 
-\[Propiedad de herederos (Casa familiar)](/es/propiedad-heredada/)
+\[Propiedad de herederos](/es/propiedad-heredada/)
 
 
 
 \---
 
-\### 🆘 Necesidades Urgentes
+\### Necesidades Urgentes
 
-\[Necesito un lugar seguro esta noche](/es/rastreador-refugios/)
+\[Necesito un lugar seguro](/es/rastreador-refugios/)
 
-\[Necesito comida o agua inmediatamente](/es/rastreador-comida/)
+\[Necesito comida o agua](/es/rastreador-comida/)
 
 
 
