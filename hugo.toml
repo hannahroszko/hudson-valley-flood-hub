@@ -4,14 +4,10 @@ defaultContentLanguage = 'en'
 
 [languages]
   [languages.en]
-    languageName = 'English'
-    title = 'Hudson Valley Flood Recovery Hub'
-    weight = 1
     contentDir = 'content/en'
+    languageName = 'English'
+    weight = 1
   [languages.es]
-    languageName = 'Español'
-    title = 'Centro de Recuperación de Inundaciones'
-    weight = 2
     contentDir = 'content/es'
-
-theme = "ananke"
+    languageName = 'Español'
+    weight = 2
