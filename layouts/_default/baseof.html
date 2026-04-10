@@ -7,8 +7,8 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
         h1 { color: #333; }
-        /* This forces every link inside the main content to look like a button */
-        div a { 
+        /* Forces all links in the main area to be buttons */
+        #content a { 
             display: block !important; 
             background: #0056b3; 
             color: white !important; 
@@ -20,11 +20,13 @@
             font-weight: bold;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        div a:hover { background: #004494; }
+        #content a:hover { background: #004494; }
     </style>
 </head>
 <body>
     <h1>{{ .Title }}</h1>
-    <div>{{ .Content }}</div>
+    <div id="content">
+        {{ block "main" . }}{{ .Content }}{{ end }}
+    </div>
 </body>
 </html>
