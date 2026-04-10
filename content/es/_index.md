@@ -40,5 +40,3 @@ Este centro ayuda a los residentes del Hudson Valley a navegar la recuperación 
 
 \[Necesito comida o agua](/es/rastreador-comida/)
 
-
-
