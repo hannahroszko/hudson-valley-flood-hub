@@ -4,11 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }}</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
-        .btn { display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+<style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
+        h1 { color: #333; }
+        /* This styles only the "Intake" links we create in the markdown */
+        p a { 
+            display: block; 
+            background: #0056b3; 
+            color: white !important; 
+            padding: 18px; 
+            margin: 12px 0; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        p a:hover { background: #004494; }
     </style>
-</head>
+    </head>
 <body>
     <h1>{{ .Title }}</h1>
     <div>{{ .Content }}</div>

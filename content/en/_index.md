@@ -8,5 +8,16 @@ This hub is designed to help Hudson Valley residents navigate flood recovery whe
 
 [Ver esta página en Español](/es/)
 
-## Start Here
-(Questions coming soon...)
+## Start Your Intake
+**How would you describe your housing situation?**
+
+[I own my home](/en/owner/)
+[I rent my home](/en/renter/)
+[Heir's Property (Family-owned, name not on deed)](/en/heirs-property/)
+
+---
+### 🆘 Urgent Needs
+[I need a safe place to stay tonight](/en/shelter-tracker/)
+[I need food or water immediately](/en/food-tracker/)
+
+
