@@ -1,12 +1,12 @@
-{
++++
 
-"title": "Centro de Recuperación de Inundaciones",
+title = "Centro de Recuperación de Inundaciones"
 
-"date": "2026-04-10",
+date = 2026-04-10
 
-"draft": false
+draft = false
 
-}
++++
 
 
 
