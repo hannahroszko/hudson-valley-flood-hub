@@ -7,10 +7,10 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
         h1 { color: #333; }
-        /* This forces the blue button style on ALL links */
-        a { 
+        /* This forces the blue button style on ALL links inside your content */
+        div a { 
             display: block !important; 
-            background: #0056b3; 
+            background: #0056b3 !important; 
             color: white !important; 
             padding: 18px; 
             margin: 15px 0; 
@@ -18,12 +18,15 @@
             border-radius: 8px; 
             text-align: center;
             font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        a:hover { background: #004494; }
+        div a:hover { background: #004494 !important; }
     </style>
 </head>
 <body>
     <h1>{{ .Title }}</h1>
-    {{ .Content }}
+    <div id="main-content">
+        {{ .Content }}
+    </div>
 </body>
 </html>
