@@ -34,8 +34,6 @@ Este centro ayuda a los residentes del Hudson Valley a navegar la recuperación 
 
 
 
-\---
-
 \### Necesidades Urgentes
 
 \[Necesito un lugar seguro](/es/rastreador-refugios/)
