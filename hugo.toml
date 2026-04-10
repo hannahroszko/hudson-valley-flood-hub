@@ -1,3 +1,15 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://hudson-valley-flood-hub.pages.dev'
+title = 'Hudson Valley Flood Recovery Hub'
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    title = 'Hudson Valley Flood Recovery Hub'
+    weight = 1
+    contentDir = 'content/en'
+  [languages.es]
+    languageName = 'Español'
+    title = 'Centro de Recuperación de Inundaciones'
+    weight = 2
+    contentDir = 'content/es'
