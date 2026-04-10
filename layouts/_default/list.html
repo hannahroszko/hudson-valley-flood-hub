@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }}</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
+        h1 { color: #333; }
+        /* This forces the blue button style on ALL links */
+        a { 
+            display: block !important; 
+            background: #0056b3; 
+            color: white !important; 
+            padding: 18px; 
+            margin: 15px 0; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            text-align: center;
+            font-weight: bold;
+        }
+        a:hover { background: #004494; }
+    </style>
+</head>
+<body>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+</body>
+</html>
