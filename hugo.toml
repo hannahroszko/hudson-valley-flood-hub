@@ -16,3 +16,8 @@ disableKinds = ["taxonomy", "term"]
 
 [build]
   useResourceCacheWhen = 'never'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
