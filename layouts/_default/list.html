@@ -1,8 +1,6 @@
 {{ define "main" }}
-<main class="content-wrapper">
-    <!-- Removed automatic {{ .Title }} to prevent duplication -->
-    <div class="homepage-content">
-        {{ .Content }}
-    </div>
-</main>
+<div class="container">
+    <!-- This removes the automatic double title -->
+    {{ .Content }}
+</div>
 {{ end }}
