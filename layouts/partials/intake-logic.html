@@ -1,0 +1,27 @@
+<!-- Simplified Intake Snippet -->
+<div id="intake-container" style="max-width: 400px; font-family: sans-serif;">
+  <div id="step-1" class="step">
+    <p><strong>Step 1:</strong> Do you own or rent your home?</p>
+    <button onclick="next('step-2-owner')">I am an Owner</button>
+    <button onclick="next('step-2-renter')">I am a Renter</button>
+  </div>
+
+  <div id="step-2-owner" class="step" style="display:none;">
+    <p><strong>Step 2:</strong> Have you already applied for FEMA?</p>
+    <button onclick="next('dead-end-fema')">Yes</button>
+    <button onclick="next('fema-guide')">No</button>
+  </div>
+
+  <div id="dead-end-fema" class="step" style="display:none;">
+    <p><strong>Status:</strong> If you've already applied and were denied, you should move to the Appeal Generator.</p>
+    <a href="/appeal-generator" class="button">Go to Appeal Generator</a>
+  </div>
+</div>
+
+<script>
+  function next(id) {
+    document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo(0, 0); // Keep focus on the new question
+  }
+</script>
