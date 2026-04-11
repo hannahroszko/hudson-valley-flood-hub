@@ -13,22 +13,15 @@
     <button onclick="next('heirs-info')">No (Inherited/Heir's Property)</button>
   </div>
 
-  <!-- Heir's Property Content (Moved here) -->
+  <!-- Heir's Property Info Branch -->
   <div id="heirs-info" class="step" style="display:none;">
-    <h3>Proving Ownership Without a Deed</h3>
-    <p>FEMA accepts these alternatives (You only need ONE):</p>
+    <h3>Proving Ownership (Heir's Property)</h3>
+    <p>FEMA accepts these as alternative proof (Choose ONE):</p>
     <ul>
-      <li>Public Official’s Statement</li>
-      <li>Major Repair Receipts (last 5 years)</li>
-      <li>Property Tax Documents</li>
+      <li>Public Official’s Statement (from a Mayor, Police Chief, etc.)</li>
+      <li>Major Repair Receipts (within last 5 years)</li>
+      <li>Property Tax Bill/Receipt (even if in deceased's name)</li>
     </ul>
-    <button onclick="next('step-3-fema')">I have one of these, what's next?</button>
-  </div>
-
-  <!-- Step 3: FEMA Check -->
-  <div id="step-3-fema" class="step" style="display:none;">
-    <p><strong>Step 3:</strong> Have you already applied for FEMA?</p>
-    <button onclick="next('denial-logic')">Yes, and I was denied</button>
-    <button onclick="next('fema-instructions')">No, I need to apply</button>
+    <button onclick="next('step-3-fema')">I have this, what's next?</button>
   </div>
 </div>
