@@ -1,3 +1,17 @@
 {{ define "main" }}
-    {{ .Content }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    
+    <!-- This tag below is what pulls the text from your _index.md -->
+    <div class="content">
+        {{ .Content }}
+    </div>
+
+    <!-- This loop shows the links to your other pages (Intake, etc.) -->
+    <ul class="page-list">
+        {{ range .Pages }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+</div>
 {{ end }}
