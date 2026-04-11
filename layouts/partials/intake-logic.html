@@ -1,27 +1,34 @@
-<!-- Simplified Intake Snippet -->
-<div id="intake-container" style="max-width: 400px; font-family: sans-serif;">
+<div id="intake-container">
+  <!-- Step 1: Tenure -->
   <div id="step-1" class="step">
     <p><strong>Step 1:</strong> Do you own or rent your home?</p>
     <button onclick="next('step-2-owner')">I am an Owner</button>
     <button onclick="next('step-2-renter')">I am a Renter</button>
   </div>
 
+  <!-- Step 2: Owner Logic -->
   <div id="step-2-owner" class="step" style="display:none;">
-    <p><strong>Step 2:</strong> Have you already applied for FEMA?</p>
-    <button onclick="next('dead-end-fema')">Yes</button>
-    <button onclick="next('fema-guide')">No</button>
+    <p><strong>Step 2:</strong> Is your name on the deed of the home?</p>
+    <button onclick="next('step-3-fema')">Yes</button>
+    <button onclick="next('heirs-info')">No (Inherited/Heir's Property)</button>
   </div>
 
-  <div id="dead-end-fema" class="step" style="display:none;">
-    <p><strong>Status:</strong> If you've already applied and were denied, you should move to the Appeal Generator.</p>
-    <a href="/appeal-generator" class="button">Go to Appeal Generator</a>
+  <!-- Heir's Property Content (Moved here) -->
+  <div id="heirs-info" class="step" style="display:none;">
+    <h3>Proving Ownership Without a Deed</h3>
+    <p>FEMA accepts these alternatives (You only need ONE):</p>
+    <ul>
+      <li>Public Official’s Statement</li>
+      <li>Major Repair Receipts (last 5 years)</li>
+      <li>Property Tax Documents</li>
+    </ul>
+    <button onclick="next('step-3-fema')">I have one of these, what's next?</button>
+  </div>
+
+  <!-- Step 3: FEMA Check -->
+  <div id="step-3-fema" class="step" style="display:none;">
+    <p><strong>Step 3:</strong> Have you already applied for FEMA?</p>
+    <button onclick="next('denial-logic')">Yes, and I was denied</button>
+    <button onclick="next('fema-instructions')">No, I need to apply</button>
   </div>
 </div>
-
-<script>
-  function next(id) {
-    document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    window.scrollTo(0, 0); // Keep focus on the new question
-  }
-</script>
