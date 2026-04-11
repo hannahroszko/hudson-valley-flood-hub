@@ -1,23 +1,29 @@
-{{ define "main" }}
-<style>
-    /* Force blue button styling on all links within the content */
-    #main-content a { 
-        display: block !important; 
-        background: #0056b3 !important; 
-        color: white !important; 
-        padding: 18px; 
-        margin: 15px 0; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        text-align: center;
-        font-weight: bold;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    #main-content a:hover { background: #004494 !important; }
-</style>
-
-<div id="main-content">
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }}</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
+        h1 { color: #333; text-align: center; }
+        /* This forces every link on these pages to be a big blue button */
+        a { 
+            display: block !important; 
+            background-color: #0056b3 !important; 
+            color: white !important; 
+            padding: 18px !important; 
+            margin: 15px 0 !important; 
+            text-decoration: none !important; 
+            border-radius: 8px !important; 
+            text-align: center !important;
+            font-weight: bold !important;
+        }
+        a:hover { background-color: #004494 !important; }
+    </style>
+</head>
+<body>
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-</div>
-{{ end }}
+</body>
+</html>
