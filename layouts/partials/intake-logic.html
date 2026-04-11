@@ -5,11 +5,15 @@
     {{ if eq .Page.Language.Lang "es" }}
       <p><strong>Paso 1:</strong> ¿Usted es dueño o inquilino de su hogar?</p>
       <button onclick="next('step-owner-deed')">Soy Propietario (Dueño)</button>
-      <button onclick="next('step-renter')">Soy Inquilino (Renter)</button>
+      <button onclick="next('step-renter')">Soy Inquilino (Inquilino)</button>
+      <hr>
+      <button style="background:#6c757d" onclick="next('safe-box')">Ver lista de preparación (Safe Box)</button>
     {{ else }}
       <p><strong>Step 1:</strong> Do you own or rent your home?</p>
       <button onclick="next('step-owner-deed')">I am an Owner</button>
       <button onclick="next('step-renter')">I am a Renter</button>
+      <hr>
+      <button style="background:#6c757d" onclick="next('safe-box')">See Pre-Storm Checklist (Safe Box)</button>
     {{ end }}
   </div>
 
@@ -66,14 +70,40 @@
   <div id="step-renter" class="step" style="display:none;">
     {{ if eq .Page.Language.Lang "es" }}
       <p>Como inquilino, usted puede calificar para la Asistencia para Otras Necesidades (ONA) de FEMA para cubrir bienes personales y gastos de mudanza.</p>
-      <button onclick="location.reload()">Empezar de nuevo</button>
+      <button onclick="next('safe-box')">Ver lista de documentos necesarios</button>
     {{ else }}
       <p>As a renter, you may qualify for FEMA Other Needs Assistance (ONA) to cover personal property and moving expenses.</p>
-      <button onclick="location.reload()">Start Over</button>
+      <button onclick="next('safe-box')">See required documents checklist</button>
     {{ end }}
   </div>
 
-</div>
+  <!-- SAFE BOX / CHECKLIST RESULT -->
+  <div id="safe-box" class="step" style="display:none;">
+    {{ if eq .Page.Language.Lang "es" }}
+      <h3>📦 Su Caja de Seguridad Digital</h3>
+      <p>Antes de la tormenta, asegúrese de tener copias digitales de:</p>
+      <ul>
+        <li>Identificación (ID) y Títulos de propiedad/Contratos de renta</li>
+        <li>Pólizas de seguro y fotos de su hogar</li>
+      </ul>
+      <div style="background: #fff3cd; padding: 15px; border: 1px solid #ffeeba; font-size: 0.9em; margin-bottom:10px;">
+        <strong>Aviso:</strong> No guardamos sus datos. Use un servicio cifrado como ProtonDrive o una memoria USB segura.
+      </div>
+    {{ else }}
+      <h3>📦 Your Proactive Safe Box</h3>
+      <p>Before the storm hits, ensure you have digital copies of:</p>
+      <ul>
+        <li>IDs, Deeds, or Lease Agreements</li>
+        <li>Insurance policies and before photos of your property</li>
+      </ul>
+      <div style="background: #fff3cd; padding: 15px; border: 1px solid #ffeeba; font-size: 0.9em; margin-bottom:10px;">
+        <strong>Disclaimer:</strong> We do not store your personal data. Use an encrypted service like ProtonDrive or a secure USB drive.
+      </div>
+    {{ end }}
+    <button onclick="location.reload()">{{ if eq .Page.Language.Lang "es" }}Empezar de nuevo{{ else }}Start Over{{ end }}</button>
+  </div>
+
+</div> <!-- THIS WAS MISSING IN YOUR VERSION -->
 
 <script>
   function next(id) {
