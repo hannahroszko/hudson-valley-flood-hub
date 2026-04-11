@@ -2,7 +2,7 @@
 
 title = "Heir's Property Guide"
 
-url = "/en/heirs-property/"
+layout = "single"
 
 draft = false
 
