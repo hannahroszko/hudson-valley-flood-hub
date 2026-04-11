@@ -1,6 +1,6 @@
 +++
 
-title: "Displacement Intake"
+title = "Displacement Intake"
 
 +++
 
