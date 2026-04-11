@@ -1,8 +1,8 @@
 +++
 
-title = "Heir's Property: No Deed? No Problem."
+title = "Heir's Property Guide"
 
-date = 2026-04-10
+url = "/en/heirs-property/"
 
 draft = false
 
@@ -42,11 +42,9 @@ A will, a death certificate with a letter of administration, or an Affidavit of 
 
 \### 5. Self-Declarative Statement
 
-As a last resort, a signed statement explaining your ownership status under penalty of perjury. 
+As a last resort, a signed statement explaining your ownership status under penalty of perjury.
 
 
 
 \[Go Back to Home](/)
-
-
 
