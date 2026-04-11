@@ -1,4 +1,4 @@
-baseURL = 'https://pages.dev'
+baseURL = 'https://hudson-valley-flood-hub.pages.dev'
 title = 'Hudson Valley Flood Recovery Hub'
 defaultContentLanguage = 'en'
 
@@ -11,3 +11,10 @@ defaultContentLanguage = 'en'
     contentDir = 'content/es'
     languageName = 'Español'
     weight = 2
+
+[disableKinds]
+  taxonomy = true
+  term = true
+
+[build]
+  useResourceCacheWhen = 'never'
