@@ -6,9 +6,23 @@
     <title>{{ .Title }}</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
+        h1 { color: #333; text-align: center; }
+        a { 
+            display: block !important; 
+            background-color: #0056b3 !important; 
+            color: white !important; 
+            padding: 18px !important; 
+            margin: 15px 0 !important; 
+            text-decoration: none !important; 
+            border-radius: 8px !important; 
+            text-align: center !important;
+            font-weight: bold !important;
+        }
+        a:hover { background-color: #004494 !important; }
     </style>
 </head>
 <body>
     {{ block "main" . }}{{ end }}
 </body>
 </html>
+
