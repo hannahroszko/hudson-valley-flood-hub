@@ -26,6 +26,8 @@ layout = "single"
 
 &#x20;   <li>By aggregating denial reasons, we can pinpoint specific barriers that need mitigation.</li>
 
+&#x20;   <li>We use anonymized practices to protect residents' privacy while longitudinally monitoring the disaster's impact.</li>
+
 </ul>
 
 
