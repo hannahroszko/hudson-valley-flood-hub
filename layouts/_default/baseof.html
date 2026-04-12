@@ -19,14 +19,16 @@
 </head>
 <body>
     <!-- 1. Bilingual Language Switcher -->
-    <nav class="lang-nav">
-      {{ if .IsTranslated }}
-        {{ range .Translations }}
-          <a href="{{ .Permalink }}">{{ if eq .Lang "es" }}Ver en Español{{ else }}View in English{{ end }}</a>
-        {{ end }}
-      {{ end }}
-    </nav>
-
+<!-- Replace your current <nav class="lang-nav"> with this -->
+<nav class="lang-nav" style="text-align: right; padding-bottom: 20px;">
+  {{ if .IsTranslated }}
+    {{ range .Translations }}
+      <a href="{{ .Permalink }}" class="btn-action" style="display: inline-block; width: auto; padding: 10px 20px; font-size: 0.9em; margin: 0;">
+        {{ if eq .Lang "es" }}Ver en Español{{ else }}View in English{{ end }}
+      </a>
+    {{ end }}
+  {{ end }}
+</nav>
     <!-- 2. Main Content Area -->
     <div id="content">
         {{ block "main" . }}{{ end }}
