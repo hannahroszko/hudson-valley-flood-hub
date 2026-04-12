@@ -2,10 +2,6 @@
 
 title = "Cuestionario de Desplazamiento"
 
-layout = "single"
-
-draft = false
-
 +++
 
 
