@@ -6,7 +6,7 @@ title = "Centro de Recuperación de Inundaciones"
 
 
 
-<h1 style="font-size: 2em; margin-bottom: 0.5em;">Centro de Recuperación de Inundaciones</h1>
+\# Centro de Recuperación de Inundaciones
 
 
 
@@ -15,4 +15,8 @@ Este centro de recursos ayuda a los residentes de Kingston desplazados por las i
 
 
 <a href="/es/intake/" class="btn-action">Comience el cuestionario de admisión</a>
+
+
+
+<a href="/es/dashboard/" class="btn-action" style="background-color: #6c757d;">Ver panel de datos de necesidades no satisfechas</a>
 
