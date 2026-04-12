@@ -2,6 +2,10 @@
 
 title = "Flood Recovery Data and Policy Dashboard"
 
+layout = "single"
+
+draft = false
+
 +++
 
 
