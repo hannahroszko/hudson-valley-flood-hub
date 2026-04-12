@@ -6,7 +6,7 @@ title = "Centro de Recuperación de Inundaciones"
 
 
 
-\# Centro de Recuperación de Inundaciones
+<h1 style="font-size: 2em; margin-bottom: 0.5em;">Centro de Recuperación de Inundaciones</h1>
 
 
 
