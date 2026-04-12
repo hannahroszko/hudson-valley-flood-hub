@@ -3,29 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }}</title>
+    <title>{{ .Title }} | Hudson Valley Flood Hub</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
-        /* This rule turns every link in your main content into a blue button */
-        #content a { 
-            display: block !important; 
-            background: #0056b3 !important; 
-            color: white !important; 
-            padding: 18px; 
-            margin: 15px 0; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            text-align: center;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 20px; background-color: #f9f9f9; color: #333; }
+        /* High-visibility button class only for specific buttons */
+        .btn-action { 
+            display: block; background: #0056b3; color: white !important; 
+            padding: 15px; margin: 15px 0; text-decoration: none; 
+            border-radius: 8px; text-align: center; font-weight: bold; 
         }
-        #content a:hover { background: #004494 !important; }
+        .btn-action:hover { background: #004494; }
+        /* Language switcher style */
+        .lang-nav { text-align: right; margin-bottom: 20px; font-size: 0.9em; }
     </style>
 </head>
 <body>
-    <h1>{{ .Title }}</h1>
+    <!-- 1. Bilingual Language Switcher -->
+    <nav class="lang-nav">
+      {{ if .IsTranslated }}
+        {{ range .Translations }}
+          <a href="{{ .Permalink }}">{{ if eq .Lang "es" }}Ver en Español{{ else }}View in English{{ end }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+
+    <!-- 2. Main Content Area -->
     <div id="content">
-        {{ block "main" . }}{{ .Content }}{{ end }}
+        {{ block "main" . }}{{ end }}
     </div>
 </body>
 </html>
