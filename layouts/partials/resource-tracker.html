@@ -1,6 +1,7 @@
 <div class="tracker-container" style="margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px;">
     <h3>{{ if eq .Page.Language.Lang "es" }}Estado de Recursos en Kingston{{ else }}Kingston Resource Status{{ end }}</h3>
     
+    <!-- 1. AUTOMATED RESOURCE STATUS LIST -->
     {{ range .Site.Data.resources }}
     <div style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 12px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <strong style="font-size: 1.1em;">{{ .name }}</strong> <span style="font-size: 0.8em; color: #666;">({{ .type }})</span><br>
@@ -15,7 +16,24 @@
     </div>
     {{ end }}
     
-    <p style="font-size: 0.8em; color: #888; font-style: italic;">
-        {{ if eq .Page.Language.Lang "es" }}Actualizado: {{ now.Format "Jan 02, 2006" }}{{ else }}Last Updated: {{ now.Format "Jan 02, 2006" }}{{ end }}
+    <p style="font-size: 0.8em; color: #888; font-style: italic; margin-bottom: 25px;">
+        {{ if eq .Page.Language.Lang "es" }}Última actualización: {{ now.Format "02/01/2006" }}{{ else }}Last Updated: {{ now.Format "Jan 02, 2006" }}{{ end }}
     </p>
+
+    <!-- 2. ANONYMOUS UNMET NEED REPORTING (RED BUTTON) -->
+    <div style="border: 2px solid #dc3545; padding: 15px; border-radius: 8px; background: #fff5f5;">
+        <h4 style="margin-top: 0; color: #dc3545;">
+            {{ if eq .Page.Language.Lang "es" }}¿Le negaron la ayuda?{{ else }}Denied Aid?{{ end }}
+        </h4>
+        <p style="font-size: 0.9em;">
+            {{ if eq .Page.Language.Lang "es" }}Reporte sus necesidades no satisfechas de forma anónima para ayudar a mejorar las políticas locales.{{ else }}Report your unmet needs anonymously to help improve local policy.{{ end }}
+        </p>
+        
+        <!-- Language-Specific Form Link -->
+        <a href="{{ if eq .Page.Language.Lang "es" }}https://ee.kobotoolbox.org/x/Rgytf8YK?lang=es{{ else }}https://ee.kobotoolbox.org/x/Rgytf8YK{{ end }}" 
+           class="btn-action" 
+           style="background: #dc3545; margin: 0; width: auto; display: inline-block;">
+            {{ if eq .Page.Language.Lang "es" }}Reportar Necesidad No Satisfecha{{ else }}Report Unmet Need{{ end }}
+        </a>
+    </div>
 </div>
