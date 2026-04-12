@@ -22,11 +22,11 @@ layout = "single"
 
 <ul style="line-height: 1.6;">
 
-&#x20;   <li><strong>Visibilidad para los marginados:</strong> Durante los desastres, los residentes más vulnerables a menudo permanecen invisibles en las estadísticas oficiales. Este panel amplifica sus experiencias.</li>
+&#x20;   <li>Durante los desastres, los residentes más vulnerables a menudo permanecen invisibles en las estadísticas oficiales. Este panel amplifica sus experiencias.</li>
 
-&#x20;   <li><strong>Identificación de brechas sistémicas:</strong> Al agrupar las razones de denegación, podemos señalar barreras regulatorias específicas que necesitan mitigación a nivel municipal y del condado.</li>
+&#x20;   <li>Al agrupar las razones de denegación, podemos señalar barreras regulatorias específicas que necesitan mitigación a nivel municipal y del condado.</li>
 
-&#x20;   <li><strong>Privacidad primero:</strong> Utilizamos prácticas anónimas para proteger la privacidad de los residentes mientras monitoreamos el impacto del desastre de manera longitudinal.</li>
+&#x20;   <li>Utilizamos prácticas anónimas para proteger la privacidad de los residentes mientras monitoreamos el impacto del desastre de manera longitudinal.</li>
 
 </ul>
 
