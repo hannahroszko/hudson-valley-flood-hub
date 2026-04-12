@@ -16,5 +16,3 @@ Este centro de recursos ayuda a los residentes de Kingston desplazados por las i
 
 <a href="/es/intake/" class="btn-action">Comience el cuestionario de admisión</a>
 
-
-
