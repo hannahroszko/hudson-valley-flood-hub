@@ -1,123 +1,57 @@
-<div id="intake-container" style="max-width: 600px; margin: 20px auto; font-family: sans-serif; line-height: 1.5;">
+<div id="intake-container" style="max-width: 600px; margin: 20px auto; font-family: sans-serif;">
   
-  <!-- STEP 1: OWNER OR RENTER -->
+  <!-- STEP 1: OWNER/RENTER -->
   <div id="step-1" class="step">
-    {{ if eq .Page.Language.Lang "es" }}
-      <p><strong>Paso 1:</strong> ¿Usted es dueño o inquilino de su hogar?</p>
-      <button onclick="next('step-owner-deed')">Soy Propietario (Dueño)</button>
-      <button onclick="next('step-renter')">Soy Inquilino (Inquilino)</button>
-      <hr>
-      <button style="background:#6c757d" onclick="next('safe-box')">Ver lista de preparación (Safe Box)</button>
-    {{ else }}
-      <p><strong>Step 1:</strong> Do you own or rent your home?</p>
-      <button onclick="next('step-owner-deed')">I am an Owner</button>
-      <button onclick="next('step-renter')">I am a Renter</button>
-      <hr>
-      <button style="background:#6c757d" onclick="next('safe-box')">See Pre-Storm Checklist (Safe Box)</button>
-    {{ end }}
+    <p><strong>{{ if eq .Page.Language.Lang "es" }}Paso 1: ¿Es dueño o inquilino?{{ else }}Step 1: Do you own or rent?{{ end }}</strong></p>
+    <button onclick="next('step-owner-deed')">{{ if eq .Page.Language.Lang "es" }}Soy Propietario{{ else }}I am an Owner{{ end }}</button>
+    <button onclick="next('step-renter')">{{ if eq .Page.Language.Lang "es" }}Soy Inquilino{{ else }}I am a Renter{{ end }}</button>
   </div>
 
-  <!-- STEP 2: OWNER DEED CHECK -->
-  <div id="step-owner-deed" class="step" style="display:none;">
-    {{ if eq .Page.Language.Lang "es" }}
-      <p><strong>Paso 2:</strong> ¿Su nombre figura en la escritura (deed) de la casa?</p>
-      <button onclick="next('step-fema-check')">Sí, mi nombre está en la escritura</button>
-      <button onclick="next('step-heirs')">No (Propiedad de herederos/Heredada)</button>
-    {{ else }}
-      <p><strong>Step 2:</strong> Is your name on the deed of the home?</p>
-      <button onclick="next('step-fema-check')">Yes, my name is on the deed</button>
-      <button onclick="next('step-heirs')">No (Inherited/Heir's Property)</button>
-    {{ end }}
-  </div>
-
-  <!-- STEP 3: HEIR'S PROPERTY INFO -->
-  <div id="step-heirs" class="step" style="display:none;">
-    {{ if eq .Page.Language.Lang "es" }}
-      <h3>Prueba de propiedad para herederos</h3>
-      <p>FEMA acepta estos documentos si no tiene la escritura (necesita solo UNO):</p>
-      <ul>
-        <li>Declaración de un funcionario público local</li>
-        <li>Recibos de reparaciones mayores (últimos 5 años)</li>
-        <li>Factura de impuestos sobre la propiedad</li>
-      </ul>
-      <button onclick="next('step-fema-check')">Tengo uno de estos, ¿qué sigue?</button>
-    {{ else }}
-      <h3>Proving Ownership (Heir's Property)</h3>
-      <p>FEMA accepts these alternatives if you aren't on the deed (need only ONE):</p>
-      <ul>
-        <li>Public Official’s Statement</li>
-        <li>Major Repair Receipts (last 5 years)</li>
-        <li>Property Tax Bill or Receipt</li>
-      </ul>
-      <button onclick="next('step-fema-check')">I have one of these, what's next?</button>
-    {{ end }}
-  </div>
-
-  <!-- STEP 4: FEMA STATUS -->
+  <!-- STEP 2: FEMA STATUS (THE ROUTER) -->
   <div id="step-fema-check" class="step" style="display:none;">
-    {{ if eq .Page.Language.Lang "es" }}
-      <p><strong>Paso 3:</strong> ¿Ya solicitó ayuda a FEMA?</p>
-      <button onclick="alert('Próximamente: Generador de apelaciones')">Sí, y me denegaron</button>
-      <button onclick="alert('Próximamente: Guía para solicitar FEMA')">No, necesito solicitarla</button>
-    {{ else }}
-      <p><strong>Step 3:</strong> Have you already applied for FEMA?</p>
-      <button onclick="alert('Coming Soon: Appeal Generator')">Yes, and I was denied</button>
-      <button onclick="alert('Coming Soon: Guide to Apply')">No, I need to apply</button>
-    {{ end }}
+    <p><strong>{{ if eq .Page.Language.Lang "es" }}Paso 2: ¿Ya solicitó FEMA?{{ else }}Step 2: Have you applied for FEMA?{{ end }}</strong></p>
+    <button onclick="next('appeal-generator')">{{ if eq .Page.Language.Lang "es" }}Sí, y me denegaron{{ else }}Yes, and I was denied{{ end }}</button>
+    <button onclick="next('safe-box')">{{ if eq .Page.Language.Lang "es" }}No, necesito ayuda para empezar{{ else }}No, I need help starting{{ end }}</button>
   </div>
 
-  <!-- RENTER BRANCH -->
-  <div id="step-renter" class="step" style="display:none;">
-    {{ if eq .Page.Language.Lang "es" }}
-      <p>Como inquilino, usted puede calificar para la Asistencia para Otras Necesidades (ONA) de FEMA para cubrir bienes personales y gastos de mudanza.</p>
-      <button onclick="next('safe-box')">Ver lista de documentos necesarios</button>
-    {{ else }}
-      <p>As a renter, you may qualify for FEMA Other Needs Assistance (ONA) to cover personal property and moving expenses.</p>
-      <button onclick="next('safe-box')">See required documents checklist</button>
-    {{ end }}
+  <!-- STEP 3: APPEAL GENERATOR -->
+  <div id="appeal-generator" class="step" style="display:none;">
+    <h3>{{ if eq .Page.Language.Lang "es" }}Generador de Apelación{{ else }}Appeal Letter Generator{{ end }}</h3>
+    <input type="text" id="fema-num" placeholder="FEMA App #" style="width:90%; padding:10px; margin-bottom:10px;">
+    <select id="denial-reason" style="width:95%; padding:10px; margin-bottom:10px;">
+      <option value="ownership">Ownership not verified</option>
+      <option value="occupancy">Occupancy not verified</option>
+      <option value="insufficient">Insufficient Damage</option>
+    </select>
+    <button style="background:#28a745" onclick="generateLetter()">{{ if eq .Page.Language.Lang "es" }}Generar Carta{{ else }}Generate Letter{{ end }}</button>
+    <div id="letter-output" style="display:none; background:white; color:black; padding:15px; border:1px solid #333; margin-top:15px; white-space: pre-wrap; text-align:left;"></div>
   </div>
 
-  <!-- SAFE BOX / CHECKLIST RESULT -->
+  <!-- Result: Safe Box -->
   <div id="safe-box" class="step" style="display:none;">
-    {{ if eq .Page.Language.Lang "es" }}
-      <h3>📦 Su Caja de Seguridad Digital</h3>
-      <p>Antes de la tormenta, asegúrese de tener copias digitales de:</p>
-      <ul>
-        <li>Identificación (ID) y Títulos de propiedad/Contratos de renta</li>
-        <li>Pólizas de seguro y fotos de su hogar</li>
-      </ul>
-      <div style="background: #fff3cd; padding: 15px; border: 1px solid #ffeeba; font-size: 0.9em; margin-bottom:10px;">
-        <strong>Aviso:</strong> No guardamos sus datos. Use un servicio cifrado como ProtonDrive o una memoria USB segura.
-      </div>
-    {{ else }}
-      <h3>📦 Your Proactive Safe Box</h3>
-      <p>Before the storm hits, ensure you have digital copies of:</p>
-      <ul>
-        <li>IDs, Deeds, or Lease Agreements</li>
-        <li>Insurance policies and before photos of your property</li>
-      </ul>
-      <div style="background: #fff3cd; padding: 15px; border: 1px solid #ffeeba; font-size: 0.9em; margin-bottom:10px;">
-        <strong>Disclaimer:</strong> We do not store your personal data. Use an encrypted service like ProtonDrive or a secure USB drive.
-      </div>
-    {{ end }}
-    <button onclick="location.reload()">{{ if eq .Page.Language.Lang "es" }}Empezar de nuevo{{ else }}Start Over{{ end }}</button>
+    <h3>📦 {{ if eq .Page.Language.Lang "es" }}Caja de Seguridad{{ else }}Safe Box Checklist{{ end }}</h3>
+    <ul>
+      <li>{{ if eq .Page.Language.Lang "es" }}Identificación y Escritura{{ else }}ID and Deed/Lease{{ end }}</li>
+      <li>{{ if eq .Page.Language.Lang "es" }}Fotos de los daños{{ else }}Photos of damage{{ end }}</li>
+    </ul>
+    <button onclick="location.reload()">{{ if eq .Page.Language.Lang "es" }}Inicio{{ else }}Restart{{ end }}</button>
   </div>
-
-</div> <!-- THIS WAS MISSING IN YOUR VERSION -->
+</div>
 
 <script>
   function next(id) {
     document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
-    const target = document.getElementById(id);
-    if (target) {
-      target.style.display = 'block';
-    }
-    window.scrollTo(0, 0);
+    document.getElementById(id).style.display = 'block';
+  }
+  function generateLetter() {
+    const num = document.getElementById('fema-num').value;
+    const reason = document.getElementById('denial-reason').value;
+    document.getElementById('letter-output').innerText = `To FEMA Appeals Officer,\n\nRef: Application #${num}\n\nI am appealing the decision based on "${reason}". I have the supporting documents required by NYSBA standards.\n\nSincerely,\n[Your Name]`;
+    document.getElementById('letter-output').style.display = 'block';
   }
 </script>
 
 <style>
-  .step { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
-  button { display: block; width: 100%; margin: 10px 0; padding: 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-  button:hover { background: #0056b3; }
+  .step { background: #f4f4f4; padding: 20px; border-radius: 8px; }
+  button { display: block; width: 100%; margin: 10px 0; padding: 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
 </style>
