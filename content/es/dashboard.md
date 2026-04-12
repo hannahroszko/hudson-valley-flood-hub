@@ -4,33 +4,31 @@ title = "Panel de datos y políticas de recuperación"
 
 layout = "single"
 
-draft = false
-
 +++
 
 
 
-\# Abogacía basada en evidencia para los residentes de Kingston
+<h1 style="font-size: 2em; margin-bottom: 10px;">Abogacía basada en evidencia para los residentes de Kingston</h1>
 
 
 
-A medida que Kingston navega el desafío del desplazamiento climático, este panel sirve como puente entre los residentes y los legisladores.
+<p>A medida que Kingston navega el desafío del desplazamiento climático, este panel sirve como puente entre los residentes y los legisladores.</p>
 
 
 
-\### Por qué estos datos son críticos para el cambio de política
-
-\*   Durante los desastres, los residentes más vulnerables a menudo permanecen invisibles en las estadísticas oficiales. Este panel amplifica sus experiencias.
-
-\*   Al agrupar las razones de denegación, podemos señalar barreras regulatorias específicas que necesitan mitigación.
-
-\*   Utilizamos prácticas anónimas para proteger la privacidad de los residentes mientras monitoreamos el impacto del desastre.
+<h3 style="font-size: 1.3em; margin-top: 20px;">Por qué estos datos son críticos para el cambio de política</h3>
 
 
 
-\### Datos actuales de necesidades no satisfechas
+<ul style="line-height: 1.6;">
 
-\*Los datos a continuación representan informes en tiempo real de los residentes de Kingston y el valle del Hudson.\*
+&#x20;   <li><strong>Visibilidad para los marginados:</strong> Durante los desastres, los residentes más vulnerables a menudo permanecen invisibles en las estadísticas oficiales. Este panel amplifica sus experiencias.</li>
+
+&#x20;   <li><strong>Identificación de brechas sistémicas:</strong> Al agrupar las razones de denegación, podemos señalar barreras regulatorias específicas que necesitan mitigación a nivel municipal y del condado.</li>
+
+&#x20;   <li><strong>Privacidad primero:</strong> Utilizamos prácticas anónimas para proteger la privacidad de los residentes mientras monitoreamos el impacto del desastre de manera longitudinal.</li>
+
+</ul>
 
 
 
@@ -39,6 +37,4 @@ A medida que Kingston navega el desafío del desplazamiento climático, este pan
 
 
 <iframe width="100%" height="450" src="https://lookerstudio.google.com/embed/reporting/62481fdd-1a92-402d-b97e-696cf9613fd4/page/NZuuF?hl=es" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-
-
 
