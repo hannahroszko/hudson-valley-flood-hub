@@ -1,0 +1,21 @@
+<div class="tracker-container" style="margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px;">
+    <h3>{{ if eq .Page.Language.Lang "es" }}Estado de Recursos en Kingston{{ else }}Kingston Resource Status{{ end }}</h3>
+    
+    {{ range .Site.Data.resources }}
+    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 12px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <strong style="font-size: 1.1em;">{{ .name }}</strong> <span style="font-size: 0.8em; color: #666;">({{ .type }})</span><br>
+        
+        <span style="color: {{ .color }}; font-weight: bold;">
+            ● {{ if eq $.Page.Language.Lang "es" }}{{ .status_es }}{{ else }}{{ .status_en }}{{ end }}
+        </span>
+        
+        <p style="font-size: 0.9em; margin: 8px 0 0 0; color: #444;">
+            <a href="https://google.com{{ .address }}" target="_blank" style="color: #0056b3; text-decoration: none;">📍 {{ .address }}</a>
+        </p>
+    </div>
+    {{ end }}
+    
+    <p style="font-size: 0.8em; color: #888; font-style: italic;">
+        {{ if eq .Page.Language.Lang "es" }}Actualizado: {{ now.Format "Jan 02, 2006" }}{{ else }}Last Updated: {{ now.Format "Jan 02, 2006" }}{{ end }}
+    </p>
+</div>

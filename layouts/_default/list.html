@@ -1,6 +1,9 @@
 {{ define "main" }}
-<div class="container">
-    <!-- This removes the automatic double title -->
+<main class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <!-- Your homepage content from _index.md -->
     {{ .Content }}
-</div>
+
+    <!-- The resource tracker appears directly below the content -->
+    {{ partial "resource-tracker.html" . }}
+</main>
 {{ end }}
