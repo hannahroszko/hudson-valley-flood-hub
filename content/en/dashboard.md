@@ -1,6 +1,6 @@
 +++
 
-title = "Flood Recovery Data \& Policy Dashboard"
+title = "Flood Recovery Data and Policy Dashboard"
 
 +++
 
