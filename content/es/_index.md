@@ -1,10 +1,10 @@
-\---
++++
 
-title: "Centro de Recuperación de Inundaciones"
+title = "Centro de Recuperación de Inundaciones"
 
-layout: "list"
+layout = "list"
 
-\---
++++
 
 
 
