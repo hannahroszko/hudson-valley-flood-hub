@@ -1,27 +1,5 @@
 {{ define "main" }}
-<div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
-    
-    <!-- LANGUAGE SWITCHER -->
-    <!-- This only appears if a translation exists for the current page -->
-    <nav class="language-switcher" style="text-align: right; margin-bottom: 20px;">
-      {{ if .IsTranslated }}
-        {{ range .Translations }}
-          <a href="{{ .Permalink }}" style="font-weight: bold; color: #007bff; text-decoration: none; border: 1px solid #007bff; padding: 5px 10px; border-radius: 4px;">
-            {{ if eq .Lang "es" }}Ver esta página en Español{{ else }}View this page in English{{ end }}
-          </a>
-        {{ end }}
-      {{ end }}
-    </nav>
-
-    <article class="content-wrapper">
-      <!-- 
-        TITLE NOTE: We removed <h1>{{ .Title }}</h1> from here. 
-        If you want a title to show up, you must type # Your Title 
-        at the top of your .md files. This gives you 100% control.
-      -->
-      {{ .Content }}
-    </article>
-    
-</div>
+<article class="content-wrapper">
+  {{ .Content }}
+</article>
 {{ end }}
-
